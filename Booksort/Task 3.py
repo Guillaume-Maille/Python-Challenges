@@ -1,20 +1,20 @@
-#OPENFILE "Books" FOR READ
-#IsFound ← FALSE
-#OUTPUT "Enter Author"
-#INPUT Author
-#REPEAT
-#  READFILE "Books", FileAuthor
-#    IF FileAuthor = Author
-#      THEN
-#        IsFound ← TRUE
-#        OUTPUT "Title”
-#    ENDIF
-#UNTIL IsFound = TRUE OR EOF("Books")
+OPENFILE "Books" FOR READ
+IsFound ← FALSE
+OUTPUT "Enter Author"
+INPUT Author
+REPEAT
+  READFILE "Books", FileAuthor
+    IF FileAuthor = Author
+      THEN
+        IsFound ← TRUE
+        OUTPUT "Title”
+    ENDIF
+UNTIL IsFound = TRUE OR EOF("Books")
 
-#IF IsFound = FALSE
-#   THEN
-#     OUTPUT "No Author found"
-#ENDIF
+IF IsFound = FALSE
+   THEN
+     OUTPUT "No Author found"
+ENDIF
 
 def task3():
     x = True
